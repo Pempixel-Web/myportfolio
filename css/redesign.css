@@ -1,0 +1,1009 @@
+/* ==========================================================================
+   REDESIGN.CSS
+   Premium "modern web developer" visual layer for the existing portfolio.
+   Loaded AFTER style.css — overrides visual presentation only.
+   No content, copy, links or structure is changed by this file; it purely
+   re-skins the elements that already exist in index.html.
+   ========================================================================== */
+
+/* -----------------------------------------------------------------------
+   1. DESIGN TOKENS
+   ----------------------------------------------------------------------- */
+:root {
+  /* surfaces */
+  --bg-0: #05070d; /* deepest background */
+  --bg-1: #080b14; /* base body background */
+  --bg-2: #0d1220; /* card / panel background */
+  --bg-2-solid: #0b0f1a;
+  --surface: rgba(255, 255, 255, 0.035);
+  --surface-strong: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.09);
+  --border-strong: rgba(255, 255, 255, 0.16);
+
+  /* text */
+  --text-hi: #f3f5fa;
+  --text-mid: #aab2c5;
+  --text-low: #6b7286;
+
+  /* brand / accent — indigo + cyan, the "engineering" pairing */
+  --accent: #6d5efc;
+  --accent-2: #22d3ee;
+  --accent-3: #a78bfa;
+  --accent-rgb: 109, 94, 252;
+  --accent-2-rgb: 34, 211, 238;
+  --gradient: linear-gradient(120deg, #6d5efc 0%, #4f8cff 45%, #22d3ee 100%);
+  --gradient-soft: linear-gradient(
+    120deg,
+    rgba(109, 94, 252, 0.16),
+    rgba(34, 211, 238, 0.16)
+  );
+
+  /* type */
+  --font-body: "Poppins", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+
+  /* misc */
+  --radius-sm: 8px;
+  --radius: 16px;
+  --radius-lg: 24px;
+  --shadow-soft: 0 20px 60px -20px rgba(0, 0, 0, 0.6);
+  --shadow-glow:
+    0 0 0 1px rgba(var(--accent-rgb), 0.25),
+    0 20px 60px -15px rgba(var(--accent-rgb), 0.35);
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* -----------------------------------------------------------------------
+   2. GLOBAL BASE
+   ----------------------------------------------------------------------- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(
+      60vw 60vw at 88% -10%,
+      rgba(109, 94, 252, 0.16),
+      transparent 60%
+    ),
+    radial-gradient(
+      50vw 50vw at 8% 15%,
+      rgba(34, 211, 238, 0.1),
+      transparent 55%
+    ),
+    radial-gradient(
+      40vw 40vw at 50% 100%,
+      rgba(109, 94, 252, 0.08),
+      transparent 60%
+    ),
+    var(--bg-1) !important;
+  color: var(--text-mid) !important;
+  font-family: var(--font-body) !important;
+}
+
+::selection {
+  background: rgba(var(--accent-rgb), 0.45);
+  color: #fff;
+}
+
+/* thin, tech-flavoured scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-0);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--accent), var(--accent-2));
+  border-radius: 10px;
+  border: 2px solid var(--bg-0);
+}
+
+a {
+  color: var(--accent-2);
+}
+a:hover,
+a:focus {
+  color: var(--accent-3);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
+  color: var(--text-hi) !important;
+  letter-spacing: -0.01em;
+}
+
+p {
+  color: var(--text-mid);
+}
+
+.text-primary {
+  color: var(--accent-2) !important;
+}
+
+/* reusable gradient text utility (applied to hero name span) */
+.grad-text {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* -----------------------------------------------------------------------
+   3. NAVIGATION
+   ----------------------------------------------------------------------- */
+.ftco-navbar-light {
+  background: rgba(5, 7, 13, 0.55) !important;
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  transition:
+    background 0.35s var(--ease),
+    box-shadow 0.35s var(--ease);
+}
+@media (max-width: 991.98px) {
+  .ftco-navbar-light {
+    background: rgba(5, 7, 13, 0.92) !important;
+  }
+}
+
+.navbar-brand {
+  font-family: var(--font-mono) !important;
+  font-weight: 600 !important;
+  font-size: 19px !important;
+  letter-spacing: 0 !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+.ftco-navbar-light .navbar-brand,
+.ftco-navbar-light.scrolled .navbar-brand {
+  color: #fff !important;
+}
+.navbar-brand::before {
+  content: "<";
+  color: var(--accent-2);
+  font-weight: 500;
+  margin-right: 2px;
+}
+.navbar-brand::after {
+  content: "/>";
+  color: var(--accent);
+  font-weight: 500;
+  margin-left: 4px;
+}
+
+.ftco-navbar-light .navbar-nav > .nav-item > .nav-link {
+  font-family: var(--font-body);
+  font-size: 14.5px !important;
+  font-weight: 500 !important;
+  color: var(--text-mid) !important;
+  letter-spacing: 0.02em;
+}
+.ftco-navbar-light .navbar-nav > .nav-item > .nav-link:hover,
+.ftco-navbar-light .navbar-nav > .nav-item .nav-link.active,
+.ftco-navbar-light.scrolled .nav-item.active > a,
+.ftco-navbar-light.scrolled .nav-link.active {
+  color: #fff !important;
+}
+.ftco-navbar-light .navbar-nav > .nav-item > .nav-link span:before {
+  background: var(--gradient) !important;
+  height: 2px;
+}
+.ftco-navbar-light.scrolled {
+  background: rgba(5, 7, 13, 0.85) !important;
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  box-shadow: 0 8px 30px -12px rgba(0, 0, 0, 0.6) !important;
+}
+.ftco-navbar-light.scrolled .nav-item > .nav-link {
+  color: var(--text-mid) !important;
+}
+.ftco-navbar-light .navbar-toggler {
+  color: #fff !important;
+}
+
+/* -----------------------------------------------------------------------
+   4. HERO
+   ----------------------------------------------------------------------- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-0);
+}
+
+.owl-carousel.home-slider .slider-item {
+  background-image: none !important;
+  background: var(--bg-0);
+}
+.owl-carousel.home-slider .slider-item .overlay {
+  opacity: 0 !important;
+}
+
+/* faint animated grid + glow to signal "engineering" instantly */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 44px 44px;
+  -webkit-mask-image: radial-gradient(
+    80% 60% at 50% 20%,
+    #000 40%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(80% 60% at 50% 20%, #000 40%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 60vw;
+  height: 60vw;
+  max-width: 900px;
+  max-height: 900px;
+  background: radial-gradient(
+    circle,
+    rgba(var(--accent-rgb), 0.3),
+    transparent 65%
+  );
+  filter: blur(10px);
+  animation: heroFloat 9s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+@keyframes heroFloat {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-3%, 4%);
+  }
+}
+
+.hero .container,
+.hero .slider-text {
+  position: relative;
+  z-index: 1;
+}
+
+.hero .subheading {
+  font-family: var(--font-mono) !important;
+  font-size: 13px !important;
+  letter-spacing: 0.14em !important;
+  color: var(--accent-2) !important;
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.6em;
+  padding: 0.5em 1em;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  background: var(--surface);
+}
+.hero .subheading::before {
+  content: "</>";
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.hero .slider-text h1,
+.owl-carousel.home-slider .slider-item .slider-text h1 {
+  font-size: 58px !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em;
+  color: #fff !important;
+  margin-top: 1.1rem !important;
+}
+.hero .slider-text h1 span,
+.owl-carousel.home-slider .slider-item .slider-text h1 span {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-weight: 800 !important;
+}
+@media (max-width: 767.98px) {
+  .hero .slider-text h1,
+  .owl-carousel.home-slider .slider-item .slider-text h1 {
+    font-size: 36px !important;
+  }
+}
+
+#typing-animation {
+  font-family: var(--font-mono) !important;
+  font-size: 20px !important;
+  font-weight: 500 !important;
+  color: var(--accent-2) !important;
+  display: inline-block;
+  animation: none !important; /* JS drives the character reveal already */
+  white-space: normal !important;
+  overflow: visible !important;
+}
+#typing-animation::before {
+  display: none !important;
+  content: none !important;
+}
+#typing-animation::after {
+  content: "";
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  margin-left: 4px;
+  background: var(--accent-2);
+  vertical-align: -2px;
+  animation: caretBlink 1s steps(2) infinite;
+}
+@keyframes caretBlink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.hero .slider-text h2 {
+  font-family: var(--font-mono) !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  color: var(--text-mid) !important;
+  display: inline-block;
+  padding: 0.6em 1.1em;
+  margin-top: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+}
+
+.hero .slider-text p a.btn-primary {
+  margin-top: 0.5rem;
+}
+
+/* the existing profile / brand image column, framed like a code editor */
+/* .hero .one-third.img {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-glow), var(--shadow-soft);
+  overflow: hidden;
+  border: 1px solid var(--border-strong);
+  background-color: var(--bg-2);
+  transition: filter 0.4s ease;
+  filter: grayscale(100%);
+}
+
+.hero .one-third.img:hover {
+  filter: grayscale(100%);
+} */
+
+.hero .one-third.img {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-glow), var(--shadow-soft);
+  overflow: hidden;
+  border: 1px solid var(--border-strong);
+  background-color: var(--bg-2);
+  filter: grayscale(100%);
+  transition: filter 0.4s ease;
+}
+
+.hero .one-third.img:hover {
+  filter: grayscale(0%);
+  filter: blur(10px);
+}
+
+/* .hero .one-third.img .overlay{
+  opacity:1 !important;
+  background:
+    linear-gradient(180deg, rgba(5,7,13,.05) 0%, rgba(5,7,13,.55) 100%),
+    linear-gradient(90deg, rgba(5,7,13,.55) 0%, transparent 30%);
+} */
+
+/* .hero .one-third.img .overlay {
+  opacity: 1 !important;
+  background:
+    linear-gradient(180deg, rgba(5, 7, 13, 0.02) 0%, rgba(5, 7, 13, 0.28) 100%),
+    linear-gradient(90deg, rgba(5, 7, 13, 0.22) 0%, transparent 25%);
+} */
+
+.hero .one-third.img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 38px;
+  background: rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid var(--border);
+  z-index: 2;
+}
+.hero .one-third.img::after {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: 18px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ff5f57;
+  box-shadow:
+    20px 0 0 #febc2e,
+    40px 0 0 #28c840;
+  z-index: 3;
+}
+
+/* -----------------------------------------------------------------------
+   5. SECTION HEADINGS (shared across About / Resume / Projects / Contact)
+   ----------------------------------------------------------------------- */
+.ftco-section {
+  position: relative;
+}
+
+.heading-section .subheading {
+  font-family: var(--font-mono) !important;
+  font-size: 12px !important;
+  letter-spacing: 0.18em !important;
+  color: var(--accent-2) !important;
+}
+.heading-section h1.big {
+  color: rgba(255, 255, 255, 0.045) !important;
+  font-weight: 800 !important;
+}
+.heading-section h2 {
+  font-weight: 700 !important;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+.heading-section h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 56px;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--gradient);
+}
+.heading-section.text-center h2::after {
+  left: 50%;
+}
+.heading-section p {
+  color: var(--text-mid) !important;
+}
+
+/* -----------------------------------------------------------------------
+   6. ABOUT
+   ----------------------------------------------------------------------- */
+.ftco-about .img-about {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--bg-2);
+  box-shadow: var(--shadow-soft);
+}
+.ftco-about .img-about .overlay {
+  background:
+    linear-gradient(160deg, rgba(109, 94, 252, 0.14), rgba(34, 211, 238, 0.08)),
+    var(--bg-2-solid) !important;
+  padding: 2.4rem !important;
+}
+
+.about-mf .about-img img,
+.ftco-about .about-img img {
+  border-radius: var(--radius);
+  border: 2px solid transparent;
+  background:
+    linear-gradient(var(--bg-2), var(--bg-2)) padding-box,
+    var(--gradient) border-box;
+  box-shadow: 0 10px 30px -10px rgba(var(--accent-rgb), 0.45);
+}
+
+.ftco-about .about-info p {
+  font-size: 14px;
+  margin-bottom: 0.5rem;
+}
+.ftco-about .about-info .title-s {
+  font-family: var(--font-mono);
+  color: var(--accent-2);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+
+.skill-mf .title-s {
+  font-family: var(--font-mono) !important;
+  font-size: 13px !important;
+  letter-spacing: 0.03em;
+  color: #fff !important;
+  font-weight: 600 !important;
+  display: block;
+  margin-top: 1.4rem;
+  margin-bottom: 0.6rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--border);
+}
+.skill-mf > .title-s:first-child {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.skill-mf span:not(.pull-right) {
+  font-size: 13px;
+  color: var(--text-mid);
+}
+.skill-mf span.pull-right {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--accent-2);
+}
+.skill-mf .progress {
+  background: var(--surface) !important;
+  border-radius: 99px !important;
+  height: 6px !important;
+  overflow: hidden;
+}
+.skill-mf .progress .progress-bar {
+  height: 6px !important;
+  border-radius: 99px !important;
+  background: var(--gradient) !important;
+}
+
+.ftco-about ul.about-info li span:first-child {
+  color: var(--accent-2) !important;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500 !important;
+}
+.ftco-about ul.about-info li span:last-child {
+  color: var(--text-mid);
+}
+
+.ftco-about .counter-wrap {
+  padding: 1.4rem 1.6rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.ftco-about .counter-wrap .text p span.number {
+  color: var(--accent-2) !important;
+  font-size: 28px;
+}
+
+/* -----------------------------------------------------------------------
+   7. RESUME / EXPERIENCE / EDUCATION
+   ----------------------------------------------------------------------- */
+.big-4 {
+  font-family: var(--font-mono);
+  font-size: 28px !important;
+  font-weight: 600 !important;
+  color: #fff !important;
+  transform: none !important;
+  letter-spacing: 0 !important;
+}
+.underline {
+  width: 56px;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--gradient);
+  margin: 0.6rem 0 2rem;
+}
+
+.resume-wrap {
+  background: var(--surface) !important;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent) !important;
+  border-radius: var(--radius) !important;
+  padding: 2rem !important;
+  transition:
+    transform 0.3s var(--ease),
+    border-color 0.3s var(--ease),
+    background 0.3s var(--ease);
+}
+.resume-wrap:hover {
+  transform: translateY(-4px);
+  border-left-color: var(--accent-2) !important;
+  background: var(--surface-strong) !important;
+}
+.resume-wrap .date {
+  font-family: var(--font-mono) !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.06em;
+  color: var(--accent-2) !important;
+  display: inline-block;
+  padding: 0.3em 0.8em;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  margin-bottom: 0.9rem;
+}
+.resume-wrap h2 {
+  font-size: 21px !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.15rem;
+}
+.resume-wrap .position {
+  font-family: var(--font-mono) !important;
+  color: var(--text-low) !important;
+  font-size: 11.5px !important;
+  letter-spacing: 0.12em !important;
+}
+.resume-wrap p,
+.resume-wrap li {
+  color: var(--text-mid);
+  font-size: 15px;
+  line-height: 1.8;
+}
+.resume-wrap ul {
+  padding-left: 1.1rem;
+  margin-top: 0.6rem;
+}
+.resume-wrap li {
+  margin-bottom: 0.4rem;
+}
+.resume-wrap li::marker {
+  color: var(--accent-2);
+}
+
+/* -----------------------------------------------------------------------
+   8. PROJECTS
+   ----------------------------------------------------------------------- */
+#project-section .row.d-flex,
+#project-section .row.justify-content-center {
+  row-gap: 1rem;
+}
+
+.blog-entry {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition:
+    transform 0.4s var(--ease),
+    box-shadow 0.4s var(--ease),
+    border-color 0.4s var(--ease);
+  height: 100%;
+}
+.blog-entry:hover {
+  transform: translateY(-8px);
+  border-color: rgba(var(--accent-rgb), 0.5);
+  box-shadow: var(--shadow-glow);
+}
+
+.blog-entry .block-20 {
+  height: 210px;
+  position: relative;
+  margin: 0;
+}
+.blog-entry .block-20::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(8, 11, 20, 0) 40%,
+    rgba(8, 11, 20, 0.94) 100%
+  );
+}
+.blog-entry .block-20::before {
+  content: "View Project ↗";
+  position: absolute;
+  left: 20px;
+  bottom: 16px;
+  z-index: 2;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: #fff;
+  padding: 0.5em 1em;
+  border-radius: 999px;
+  background: var(--gradient);
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    opacity 0.35s var(--ease),
+    transform 0.35s var(--ease);
+}
+.blog-entry:hover .block-20::before {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.blog-entry .text {
+  padding: 1.5rem 1.6rem 1.8rem;
+  margin: 0 !important;
+  float: none !important;
+}
+.blog-entry .text .heading {
+  font-size: 19px !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.7rem !important;
+}
+.blog-entry .text .heading a {
+  color: #fff !important;
+}
+.blog-entry .text .heading a:hover {
+  color: var(--accent-2) !important;
+}
+.blog-entry .text .heading u {
+  text-decoration: none;
+  color: var(--accent-2);
+}
+.blog-entry .text p {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--text-mid);
+  margin-bottom: 0;
+}
+
+/* -----------------------------------------------------------------------
+   9. COUNTER / "WHY HIRE ME" + GITHUB CTA + PHILOSOPHY QUOTE
+   ----------------------------------------------------------------------- */
+.ftco-counter {
+  background: var(--bg-0) !important;
+}
+
+.ftco-counter .block-18 {
+  background: var(--surface) !important;
+  border: 1px solid var(--border);
+  border-radius: var(--radius) !important;
+  padding: 2rem 1.6rem !important;
+  height: 100%;
+  transition:
+    transform 0.3s var(--ease),
+    border-color 0.3s var(--ease);
+}
+.ftco-counter .block-18:hover {
+  transform: translateY(-4px);
+  border-color: rgba(var(--accent-rgb), 0.4);
+}
+.ftco-counter .block-18 .text span {
+  color: var(--text-hi) !important;
+  font-size: 15px;
+  line-height: 1.7;
+}
+.ftco-counter .block-18::before {
+  content: "{ }";
+  display: block;
+  font-family: var(--font-mono);
+  color: var(--accent-2);
+  font-size: 22px;
+  margin-bottom: 0.8rem;
+}
+
+.ftco-hireme.img {
+  background-image: none !important;
+  background: linear-gradient(180deg, var(--bg-0), var(--bg-1)) !important;
+  border-top: 1px solid var(--border);
+  position: relative;
+}
+.ftco-hireme h2 {
+  font-weight: 700 !important;
+}
+.ftco-hireme h2 span {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+.ftco-hireme .heading {
+  margin-top: 2.2rem;
+  padding: 1.8rem 2rem;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent-2);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.ftco-hireme .heading h3 {
+  font-weight: 400 !important;
+  font-size: 19px !important;
+  color: var(--text-mid) !important;
+}
+.ftco-hireme .heading h3 b {
+  color: #fff !important;
+  font-weight: 600 !important;
+}
+.ftco-hireme .heading h3:first-child::before {
+  content: "“";
+  color: var(--accent-2);
+}
+.ftco-hireme .heading h3:nth-child(2)::after {
+  content: "”";
+  color: var(--accent-2);
+}
+.ftco-hireme .heading h3:last-child {
+  font-family: var(--font-mono) !important;
+  font-size: 13px !important;
+  letter-spacing: 0.1em;
+  color: var(--accent-2) !important;
+  margin-top: 0.5rem;
+}
+
+/* -----------------------------------------------------------------------
+   10. CONTACT
+   ----------------------------------------------------------------------- */
+.contact-section .box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius) !important;
+  padding: 2rem 1.4rem !important;
+  height: 100%;
+  transition:
+    transform 0.3s var(--ease),
+    border-color 0.3s var(--ease),
+    background 0.3s var(--ease);
+}
+.contact-section .box:hover {
+  transform: translateY(-5px);
+  border-color: rgba(var(--accent-rgb), 0.45);
+  background: var(--surface-strong);
+}
+.contact-section .box .icon {
+  background: var(--gradient-soft) !important;
+  border: 1px solid rgba(var(--accent-rgb), 0.35);
+}
+.contact-section .box .icon span {
+  color: var(--accent-2) !important;
+}
+.contact-section .box h3 {
+  font-family: var(--font-mono);
+  font-size: 12.5px !important;
+  letter-spacing: 0.12em !important;
+  color: var(--text-hi) !important;
+}
+.contact-section .box p a {
+  color: var(--text-mid) !important;
+  font-size: 14px;
+}
+.contact-section .box p a:hover {
+  color: var(--accent-2) !important;
+}
+
+.ftco-footer-social li a {
+  background: var(--surface) !important;
+  border: 1px solid var(--border);
+  transition:
+    transform 0.3s var(--ease),
+    border-color 0.3s var(--ease),
+    background 0.3s var(--ease);
+}
+.ftco-footer-social li a:hover {
+  transform: translateY(-4px);
+  border-color: rgba(var(--accent-rgb), 0.5);
+  background: var(--gradient-soft) !important;
+}
+.ftco-footer-social li a span {
+  color: var(--text-hi) !important;
+}
+.ftco-footer-social .normal-txt {
+  color: var(--text-low);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* -----------------------------------------------------------------------
+   11. BUTTONS
+   ----------------------------------------------------------------------- */
+.btn {
+  border-radius: 999px !important;
+  box-shadow: none !important;
+  font-family: var(--font-mono) !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.06em !important;
+}
+.btn.btn-primary {
+  position: relative;
+  background: var(--gradient) !important;
+  border: none !important;
+  color: #fff !important;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 0 14px 34px -12px rgba(var(--accent-rgb), 0.55) !important;
+  transition:
+    transform 0.3s var(--ease),
+    box-shadow 0.3s var(--ease);
+}
+.btn.btn-primary:hover {
+  transform: translateY(-3px);
+  background: var(--gradient) !important;
+  color: #fff !important;
+  box-shadow: 0 18px 40px -10px rgba(var(--accent-rgb), 0.7) !important;
+}
+.btn.btn-primary::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(
+    115deg,
+    transparent,
+    rgba(255, 255, 255, 0.35),
+    transparent
+  );
+  transform: skewX(-20deg);
+  transition: left 0.6s var(--ease);
+}
+.btn.btn-primary:hover::after {
+  left: 130%;
+}
+
+/* -----------------------------------------------------------------------
+   12. FOOTER + LOADER
+   ----------------------------------------------------------------------- */
+.ftco-footer {
+  background: var(--bg-0) !important;
+  border-top: 1px solid var(--border);
+}
+.ftco-footer p {
+  color: var(--text-low) !important;
+  font-size: 13px;
+}
+.ftco-footer a {
+  color: var(--text-mid) !important;
+}
+.ftco-footer a:hover {
+  color: var(--accent-2) !important;
+}
+.color-danger {
+  color: var(--accent-3) !important;
+}
+
+#ftco-loader.fullscreen {
+  background-color: var(--bg-0) !important;
+}
+
+/* -----------------------------------------------------------------------
+   13. SCROLL-REVEAL POLISH
+   (the template already handles visibility/opacity via .ftco-animate +
+   .ftco-animated in style.css/animate.css — we only trim the reveal
+   duration slightly so it reads as premium rather than default-template)
+   ----------------------------------------------------------------------- */
+.animated-fast {
+  -webkit-animation-duration: 0.7s;
+  animation-duration: 0.7s;
+}
+
+/* -----------------------------------------------------------------------
+   14. RESPONSIVE POLISH
+   ----------------------------------------------------------------------- */
+@media (max-width: 991.98px) {
+  .hero .one-third.img {
+    margin-top: 2rem;
+  }
+  .hero .slider-text h1,
+  .owl-carousel.home-slider .slider-item .slider-text h1 {
+    color: #fff !important;
+  }
+  .heading-section h2::after {
+    left: 50%;
+  }
+}
+
+@media (max-width: 1198px) {
+  .hero .one-third.img {
+    opacity: 0.35;
+  }
+}
+
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}

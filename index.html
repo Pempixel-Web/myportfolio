@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title> Ezekiel Vincent Olaniyan Portfolio</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+
+
+
+<style>
+
+/*======================================
+//--//-->   ABOUT
+======================================*/
+
+.about-mf .box-shadow-full {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.about-mf .about-img {
+  margin-bottom: 2rem;
+}
+
+.about-mf .about-img img {
+  margin-left: 10px;
+}
+
+
+.skill-mf .progress {
+  /* background-color: #cde1f8; */
+  margin: .5rem 0 1.2rem 0;
+  border-radius: 0;
+  height: .7rem;
+}
+
+.skill-mf .progress .progress-bar {
+  height: .7rem;
+  background-color: #ffbd39;
+}
+
+
+/* Animation styles */
+#typing-animation {
+  position: relative;
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 3s steps(20, end) infinite;
+}
+
+#typing-animation:before {
+  content: "";
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #ccc;
+  animation: typing-cursor 0.5s ease-in-out infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes typing-cursor {
+  from {
+    width: 5px;
+  }
+  to {
+    width: 0;
+  }
+}
+
+
+/* project image zoom effect */
+
+.zoom-effect {
+  overflow: hidden;
+  transition: transform 0.3s ease-out;
+}
+
+.zoom-effect:hover {
+  transform: scale(1.1);
+}
+
+
+</style>
+
+<link rel="stylesheet" href="css/redesign.css">
+
+  </head>
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+	  
+	  
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="index.html">Ezekiel Vincent </a>
+	      <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav nav ml-auto">
+	          <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
+	          <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
+	          <li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume & Experience</span></a></li>
+	          <li class="nav-item"><a href="#project-section" class="nav-link"><span>Projects</span></a></li>
+	          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+	  <section id="home-section" class="hero">
+		  <div class="home-slider  owl-carousel">
+	       <div class="slider-item ">
+	      	<div class="overlay"></div>
+	         <div class="container">
+	          <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
+				<div class="one-third js-fullheight order-md-last img" style="height: 300px; background-image: url(images/me.png);"> 
+	          	 <div class="overlay"></div>
+	          	</div>
+		          <div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+		          	<div class="text">
+		          		<span class="subheading">Your Next Web Developer Is Here!</span>
+			            <h1 class="mb-4 mt-3">I'm <span>Ezekiel Vincent</span></h1>
+
+						<!-- Element to contain animated typing -->
+						<span id="typing-animation"></span>
+
+						<script>
+
+						const typingAnimationElement = document.getElementById('typing-animation');
+
+						const typingTexts = [
+						'Front-End Development',
+						'Back-End Development',
+						'Data management',
+						'Wordpress Development',
+						'SEO Integration',
+						'UIUX Designer',
+						'Website maintenance',
+						'Theme and Plugin Customisation',
+                        'Lead Generation',
+                        'Email Marketing'
+						];
+
+						// Create a function to display the typing animation for a given text
+						function playTypingAnimation(text) {
+						// Loop through each character and add it to the element
+						for (let i = 0; i < text.length; i++) {
+							setTimeout(() => {
+							typingAnimationElement.textContent += text[i];
+							}, i * 200); // Increase the delay to slow down the typing animation
+						}
+
+						// Once the animation is complete, reset the text and start over
+						setTimeout(() => {
+							typingAnimationElement.textContent = '';
+							playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
+						}, text.length * 200);
+						}
+
+						// Start the typing animation loop
+						playTypingAnimation(typingTexts[0]);
+
+						</script>
+
+						<br>
+						<br>
+			            <h2>A Certified Web Developer</h2>
+						<!-- <h2 class="d-flex" style="margin-bottom: 0">With over 5 years of experience</h2> -->
+						<!-- <br> -->
+			            <!-- <p><a href="https://www.youtube.com/@RishabhMishraOfficial" class="btn btn-primary py-3 px-4">YouTube</a> -->
+							<p><a href="https://www.linkedin.com/in/ezekiel-vincent-635698315" class="btn btn-primary py-3 px-4">LinkedIn</a>  
+							<a href="https://github.com/Pempixel-Web" class="btn btn-primary py-3 px-4">My works</a></p> <!-- for white and black buttonbtn btn-white btn-outline-white py-3 px-4-->
+		            </div>
+		          </div>
+	        	</div>
+	        </div>
+	      </div>
+		</div>
+    </section>
+
+
+
+    <section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
+    	<div class="container">
+			<div class="row">
+				<div class="row d-flex align-items-stretch">
+				<!-- <div class="row d-flex"> -->
+					<div class="col-md-6 col-lg-5 d-flex">
+						<div class="img-about img d-flex align-items-stretch">
+							<div class="overlay">
+								<div class="row">
+									<div class="col-sm-6 col-md-5">
+									  <div class="about-img">
+										<img src="images/me.png" class="img-fluid rounded b-shadow-a" alt="">
+									  </div>
+									</div>
+									<!-- Details next to profile image -->
+									<div class="col-sm-6 col-md-7">
+									  <div class="about-info">
+										<p><span class="title-s">Name: </span> <span> Ezekiel Vincent Oluwapelumi</span></p>
+										<p><span class="title-s">Specialization: </span> <span>Frontend Developer · Web Development</span></p>
+										<p><span class="title-s">Experience: </span> <span>4 years</span></p>
+										<p><span class="title-s">Address: </span> <span>Based in Lagos, Nigeria 🇳🇬
+Available for Remote Work Worldwide <br><b>Building for the world</b></span></p>
+									  </div>
+									</div>
+								  </div>
+<br>
+<br>
+								<h2 class="mb-4">Technical Expertise</h2>
+
+<div class="skill-mf">
+
+    <!-- Frontend Engineering -->
+    <p class="title-s">Frontend Engineering</p>
+
+    <span>HTML5</span>
+    <span class="pull-right">95%</span>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 95%;"
+            aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <span>CSS3</span>
+    <span class="pull-right">92%</span>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 92%;"
+            aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <span>JavaScript</span>
+    <span class="pull-right">85%</span>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 85%;"
+            aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <span>React</span>
+    <span class="pull-right">80%</span>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 80%;"
+            aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <span>Responsive Web Development</span>
+    <span class="pull-right">95%</span>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 95%;"
+            aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <!-- Backend & API -->
+    <p class="title-s mt-4">Backend & API Integration</p>
+
+    <span>PHP</span>
+    <span class="pull-right">78%</span>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 78%;"
+            aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <span>Laravel</span>
+    <span class="pull-right">70%</span>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 70%;"
+            aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <span>REST API Integration</span>
+    <span class="pull-right">82%</span>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 82%;"
+            aria-valuenow="82" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <span>Authentication & Data Integration</span>
+    <span class="pull-right">80%</span>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 80%;"
+            aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <!-- WordPress -->
+    <p class="title-s mt-4">WordPress Development</p>
+
+    <span>WordPress Development</span>
+    <span class="pull-right">90%</span>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 90%;"
+            aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <span>Custom Theme Development</span>
+    <span class="pull-right">82%</span>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 82%;"
+            aria-valuenow="82" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <span>Plugin Development</span>
+    <span class="pull-right">85%</span>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 85%;"
+            aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <span>Theme & Plugin Customization</span>
+    <span class="pull-right">90%</span>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 90%;"
+            aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <!-- Data & Security -->
+    <p class="title-s mt-4">Data & Web Security</p>
+
+    <span>SQL / MySQL</span>
+    <span class="pull-right">80%</span>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 80%;"
+            aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <span>Database Integration</span>
+    <span class="pull-right">82%</span>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 82%;"
+            aria-valuenow="82" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <span>Secure Authentication</span>
+    <span class="pull-right">80%</span>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 80%;"
+            aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <span>Data Validation & Input Sanitization</span>
+    <span class="pull-right">80%</span>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 80%;"
+            aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <!-- Development Workflow -->
+    <p class="title-s mt-4">Development Workflow</p>
+
+    <span>Git & GitHub</span>
+    <span class="pull-right">80%</span>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 80%;"
+            aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <span>Debugging & Troubleshooting</span>
+    <span class="pull-right">85%</span>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 85%;"
+            aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <span>Web Deployment</span>
+    <span class="pull-right">85%</span>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 85%;"
+            aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <!-- Web Quality -->
+    <p class="title-s mt-4">Web Performance & Quality</p>
+
+    <span>Web Performance Optimization</span>
+    <span class="pull-right">80%</span>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 80%;"
+            aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <span>SEO</span>
+    <span class="pull-right">80%</span>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 80%;"
+            aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <span>Cross-Browser Compatibility</span>
+    <span class="pull-right">88%</span>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 88%;"
+            aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+</div>
+								  <!-- Development Tools -->
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
+						<div class="row justify-content-start pb-3">
+							<div class="col-md-12 heading-section ftco-animate">
+								
+								<h1 class="big">About</h1>
+								<h2 class="mb-4">About Me</h2>
+								
+								<p>
+									I build web applications that are designed to be fast, reliable, and secure from the ground up. My work spans frontend development, backend integration, and WordPress, with hands-on experience using HTML, CSS, JavaScript, and SQL.
+
+Beyond building interfaces, I care about what happens underneath them—clean architecture, secure data handling, authentication, performance, and protecting applications against common web vulnerabilities such as SQL injection and cross-site scripting.
+<br>
+<br>
+I approach development with a simple goal: turn ideas into dependable digital products that people can use confidently. Whether I'm building a responsive interface, integrating a backend service, or improving an existing system, I focus on writing maintainable code and delivering an experience that works as well as it looks.
+
+								</p>
+								<ul class="about-info mt-4 px-md-0 px-2">
+									<li class="d-flex"><span>Role:</span> <span>Frontend Developer · Web Development</span></li>
+									<li class="d-flex"><span>Core Expertise:</span> <span>Frontend Development, UI Implementation, Responsive Web Design</span></li>
+									<li class="d-flex"><span>Language:</span> <span>JavaScript, HTML, CSS, PHP, SQL</span></li>
+									<li class="d-flex"><span>Frameworks & Libraries:</span> <span>React, Laravel, Tailwind CSS, Bootstrap</span></li>
+									<li class="d-flex"><span>CMS & Platforms</span> <span>WordPress</span></li>
+									<li class="d-flex"><span>Backend & APIs</span> <span>REST APIs, Authentication, Database Integration</span></li>
+									<li class="d-flex"><span>Development Practices</span> <span>Git/GitHub, Component-Based Development, Responsive Design, Accessibility</span></li>
+									<li class="d-flex"><span>Performance</span> <span>Web Performance, SEO, Optimization</span></li>
+									<li class="d-flex"><span>Security</span> <span>Authentication, Input Validation, Secure Data Handling</span></li>
+									<li class="d-flex"><span>Tools</span> <span>Git, GitHub, VS Code, Figma, Chrome DevTools</span></li>
+									<li class="d-flex"><span>Soft Skills</span> <span>Problem Solving, Communication, Collaboration</span></li>
+									<li class="d-flex"><span>Education:</span> <span>B.Sc. Computer Science — In View</span></li>
+																	</ul>
+							</div>
+						</div>
+
+
+						<div class="counter-wrap ftco-animate d-flex mt-md-3">
+							<div class="textI'">
+								<!-- <p class="mb-4">
+									<span class="number" data-number="4">0</span> <span>+</span>
+									<span>&nbsp; Projects completed</span>
+								</p> -->
+								<p><a href="https://www.linkedin.com/in/ezekiel-vincent-635698315" class="btn btn-primary py-3 px-3">LinkedIn</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    </section>
+
+
+
+	
+    <section class="ftco-section ftco-no-pb" id="resume-section">
+    	<div class="container">
+    		<div class="row justify-content-center pb-5">
+          <div class="col-md-10 heading-section text-center ftco-animate">
+          	<h1 class="big big-2">Professional Profile</h1>
+            <h2 class="mb-4">Resume</h2>
+            <p>I build modern, responsive web applications and digital experiences with a focus on clean interfaces, reliable functionality, and performance. My experience spans frontend development, API integration, WordPress, and backend technologies, allowing me to take projects from interface to deployment.</p>
+			<div class="row justify-content-center mt-5">
+				<div class="col-md-6 text-center ftco-animate">
+					<p><a href="https://drive.google.com/file/d/12iJAtRoYwWte2ghWtjr99ngT9qeihtfL/view?usp=sharing" class="btn btn-primary py-3 px-3">Download Resume</a></p>
+				</div>
+			</div>
+          </div>
+        </div>
+
+
+		<div class="row">
+			<h1 class="big-4">Experience</h1>
+			<div class="underline"></div>
+		</div>
+		<br>
+		
+		<div class="row">
+
+    <!-- Yago Coding School -->
+    <div class="col-md-6">
+        <div class="resume-wrap ftco-animate">
+            <span class="date">Feb 2022 - Dec 2023</span>
+
+            <h2>Programming Instructor</h2>
+            <span class="position">Yago Coding School</span>
+
+            <p class="mt-4">
+                Delivered practical web development training to a class of 14 students,
+                covering frontend development, programming fundamentals, WordPress,
+                and modern web development workflows. Designed and delivered the
+                curriculum while guiding students through the process of building,
+                testing, debugging, and deploying functional web projects.
+            </p>
+
+            <ul>
+                <li>
+                    Taught HTML, CSS, JavaScript, React, PHP, and WordPress,
+                    helping students progress from programming fundamentals to
+                    building functional web applications.
+                </li>
+
+                <li>
+                    Designed lesson plans and practical exercises focused on
+                    problem-solving, clean code, debugging, and structured
+                    software development.
+                </li>
+
+                <li>
+                    Guided students through the complete development lifecycle,
+                    including project planning, implementation, testing,
+                    debugging, version control, and deployment.
+                </li>
+
+                <li>
+                    Taught Git and GitHub and introduced students to practical
+                    version control and collaborative development workflows.
+                </li>
+
+                <li>
+                    Supervised the development and deployment of student projects,
+                    including live websites hosted on Hostinger.
+                </li>
+
+                <li>
+                    Reviewed and debugged student code, helping learners identify
+                    technical problems and develop effective approaches to solving them.
+                </li>
+
+                <li>
+                    Supported students in building real-world projects while
+                    resolving technical challenges encountered throughout development.
+                </li>
+            </ul>
+
+			            <p class="mt-3">
+                <strong>Platform:</strong>
+                <a href="https://codingschool.ng/" target="_blank" rel="noopener noreferrer">
+                    Yago Coding School
+                </a>
+            </p>
+
+        </div>
+    </div>
+
+
+    <!-- Greathall School -->
+    <div class="col-md-6">
+        <div class="resume-wrap ftco-animate">
+            <span class="date">Jan 2024 - Mar 2025</span>
+
+            <h2>Programming Instructor</h2>
+            <span class="position">Greathall School, Lekki</span>
+
+            <p class="mt-4">
+                Delivered hands-on programming and web development training to
+                10 students, designing the curriculum and guiding learners through
+                practical software projects. Focused on programming fundamentals,
+                logical problem-solving, debugging, and real-world development practices.
+            </p>
+
+            <ul>
+                <li>
+                    Taught HTML, CSS, JavaScript, programming fundamentals,
+                    Git, GitHub, debugging, and core web development concepts.
+                </li>
+
+                <li>
+                    Designed structured practical lessons that took students
+                    from programming fundamentals to building functional web applications.
+                </li>
+
+                <li>
+                    Guided students through the development of a school website
+                    as a practical project, taking the project from implementation
+                    through deployment.
+                </li>
+
+                <li>
+                    Reviewed and debugged student code, teaching practical approaches
+                    to identifying and resolving programming issues.
+                </li>
+
+                <li>
+                    Introduced Git and GitHub and taught students professional
+                    development practices including version control, documentation,
+                    and collaborative workflows.
+                </li>
+
+                <li>
+                    Connected programming concepts to real-world software development,
+                    encouraging students to approach technology through problem-solving
+                    and product building.
+                </li>
+            </ul>
+
+            <p class="mt-3">
+                <strong>Project:</strong>
+                <a href="https://www.greathallschool.com/" target="_blank" rel="noopener noreferrer">
+                    Greathall School Website
+                </a>
+            </p>
+
+        </div>
+    </div>
+<br>
+
+<br>
+<br>
+<br>
+<br>
+
+    <!-- Odurinde eLearning -->
+    <div class="col-md-6">
+        <div class="resume-wrap ftco-animate">
+            <span class="date">April 2025 - Aug 2026</span>
+
+            <h2>Web Developer & Technical Instructor</h2>
+            <span class="position">Odurinde eLearning · UK</span>
+
+            <p class="mt-4">
+                Managed and developed the frontend and backend systems of an
+                online eLearning platform, while also delivering web development
+                training and creating technical learning content. Worked across
+                website development, SEO, databases, application development,
+                maintenance, and platform reliability.
+            </p>
+
+            <ul>
+                <li>
+                    Managed and maintained the platform's frontend and backend
+                    systems, implementing updates, resolving issues, and improving
+                    the reliability of the website as the platform scaled.
+                </li>
+
+                <li>
+                    Developed and delivered a web development video course containing
+                    over 100 instructional videos covering practical web development
+                    concepts and project-based learning.
+                </li>
+
+                <li>
+                    Built practical development projects including a real estate
+                    website and a task management application, working with frontend
+                    interfaces, application logic, and databases.
+                </li>
+
+                <li>
+                    Implemented SEO improvements and optimized website content and
+                    technical structure to improve search-engine visibility.
+                </li>
+
+                <li>
+                    Diagnosed and resolved technical errors and platform issues,
+                    including problems encountered as the number of students and
+                    platform activity increased.
+                </li>
+
+                <li>
+                    Worked with databases, APIs, Git, deployment workflows, and
+                    third-party services as part of ongoing platform development
+                    and maintenance.
+                </li>
+
+                <li>
+                    Provided web development instruction while translating practical
+                    development experience into hands-on learning materials and projects.
+                </li>
+            </ul>
+
+            <p class="mt-3">
+                <strong>Platform:</strong>
+                <a href="https://www.odurinde.com/" target="_blank" rel="noopener noreferrer">
+                    Odurinde eLearning
+                </a>
+            </p>
+
+        </div>
+    </div>
+
+<br>
+    <!-- Hope Spring eCards -->
+    <div class="col-md-6">
+        <div class="resume-wrap ftco-animate">
+            <span class="date">April 2025 - Aug 2026</span>
+
+            <h2>Web Developer & Platform Maintenance</h2>
+            <span class="position">Hope Spring eCards · UK</span>
+
+            <p class="mt-4">
+                Worked on the development, maintenance, and improvement of a live
+                charity eCard platform used to send personalized digital greetings
+                by email and WhatsApp. Supported the platform's ongoing technical
+                development and helped maintain its functionality and user experience.
+            </p>
+
+            <ul>
+                <li>
+                    Maintained and developed features across the Hope Spring
+                    eCard platform, working with an existing production website
+                    and its underlying functionality.
+                </li>
+
+                <li>
+                    Diagnosed and resolved website issues, bugs, and technical
+                    problems affecting the platform's functionality and user experience.
+                </li>
+
+                <li>
+                    Implemented website improvements and supported ongoing
+                    maintenance as new requirements and content were introduced.
+                </li>
+
+                <li>
+                    Worked with web technologies, databases, integrations, and
+                    platform functionality to support the delivery of digital
+                    charity eCards.
+                </li>
+
+                <li>
+                    Contributed to the maintenance of a production platform that
+                    supports Hope Spring's charitable clean-water initiatives.
+                </li>
+            </ul>
+
+            <p class="mt-3">
+                <strong>Platform:</strong>
+                <a href="https://ecards.hopespring.org.uk/" target="_blank" rel="noopener noreferrer">
+                    Hope Spring eCards
+                </a>
+            </p>
+
+        </div>
+    </div>
+
+<br>
+    <!-- Hope Spring -->    
+    <div class="col-md-6">
+        <div class="resume-wrap ftco-animate">
+            <span class="date">April 2025 - Aug 2026</span>
+
+            <h2>Web Developer & Technical Support</h2>
+            <span class="position">Hope Spring · UK</span>
+
+            <p class="mt-4">
+                Supported the development and maintenance of Hope Spring's web
+                platforms, contributing to website improvements, technical
+                troubleshooting, content production, and digital operations
+                across the organization's online presence.
+            </p>
+
+            <ul>
+                <li>
+                    Maintained and improved the Hope Spring website, implementing
+                    updates and resolving technical issues across the platform.
+                </li>
+
+                <li>
+                    Supported the development and maintenance of multiple web
+                    properties operated by the organization, working across
+                    frontend functionality and backend systems.
+                </li>
+
+                <li>
+                    Diagnosed website errors and implemented fixes to keep
+                    production systems stable and functional.
+                </li>
+
+                <li>
+                    Supported SEO and website optimization efforts to improve
+                    the organization's online visibility and user experience.
+                </li>
+
+                <li>
+                    Created and edited video content for the organization's
+                    YouTube channel as part of its digital communication and
+                    content strategy.
+                </li>
+
+                <li>
+                    Worked with a distributed team in the UK to support ongoing
+                    website development, maintenance, and digital projects.
+                </li>
+            </ul>
+
+            <p class="mt-3">
+                <strong>Website:</strong>
+                <a href="https://www.hopespring.org.uk/" target="_blank" rel="noopener noreferrer">
+                    Hope Spring 
+                </a>
+            </p>
+
+        </div>
+    </div>
+
+</div>
+
+		<br>
+		<br>
+
+		<style>
+			.resume-wrap {
+				height: 100%; /* Adjust this value as needed */
+			}
+		</style>
+		<!-- =========================
+     PROFESSIONAL DEVELOPMENT
+     & CERTIFICATIONS
+========================= -->
+
+<div class="row mt-5">
+    <h1 class="big-4">Professional Development & Certifications</h1>
+    <div class="underline"></div>
+</div>
+<br>
+
+<div class="row">
+
+    <!-- TS Academy -->
+<div class="col-md-6">
+    <div class="resume-wrap ftco-animate">
+
+        <span class="date">Completed</span>
+
+        <h2>Frontend Development</h2>
+
+        <span class="position">
+            TS Academy
+        </span>
+
+        <p class="mt-4">
+            Completed practical frontend development training focused on
+            building responsive and interactive web interfaces. Applied
+            the skills learned through a collaborative web development
+            project, working with other developers to design, develop,
+            test, and deliver a functional website.
+        </p>
+
+        <ul>
+            <li>
+                Collaborated with other developers to build a functional
+                website as part of a team-based development project.
+            </li>
+
+            <li>
+                Served as Team Lead, coordinating development tasks,
+                communicating with team members, and helping ensure the
+                project progressed according to plan.
+            </li>
+
+            <li>
+                Contributed to the frontend development and implementation
+                of the project using modern web technologies.
+            </li>
+
+            <li>
+                Applied version control and collaborative development
+                practices while working with the team.
+            </li>
+        </ul>
+
+        <p class="mt-3">
+            <strong>Project:</strong>
+            <a href="https://capstone-project-group-14.vercel.app/"
+               target="_blank"
+               rel="noopener noreferrer">
+                View Project
+            </a>
+        </p>
+
+        <a href="images/certificates/ts academy-frontend development (ezekiel vincent).png"
+           download="ts academy-frontend development (ezekiel vincent).png"
+           class="btn btn-primary mt-2">
+            <i class="fas fa-download"></i>
+            Download Certificate
+        </a>
+
+    </div>
+</div>
+
+
+    <!-- Udemy Web Development -->
+    <div class="col-md-6">
+        <div class="resume-wrap ftco-animate">
+
+            <span class="date">Completed</span>
+
+            <h2>Web Development</h2>
+
+            <span class="position">
+                Udemy · Certificate of Completion
+            </span>
+
+            <p class="mt-4">
+                Completed comprehensive web development training covering
+                practical development concepts, modern web technologies,
+                and building functional web applications.
+            </p>
+
+            <a href="images/certificates/web development certificate - udemy (ezekiel vincent).jpg"
+               download="web development certificate - udemy (ezekiel vincent).jpg"
+               class="btn btn-primary mt-2">
+                <i class="fas fa-download"></i>
+                Download Certificate
+            </a>
+
+        </div>
+    </div>
+
+
+
+
+</div>
+    </section>
+    <section class="ftco-section" id="project-section">
+      <div class="container">
+        <div class="row justify-content-center mb-5 pb-5">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <h1 class="big big-2">Projects</h1>
+            <h2 class="mb-4">Projects</h2>
+            <p>A collection of web projects showcasing modern, responsive, and user-focused digital solutions across different industries.</p>
+          </div>
+        </div>
+        <div class="row d-flex">
+            <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-end">
+              <a href="mtn-website-recreation.vercel.app" class="block-20 zoom-effect" style="background-image: url('images/mtn\ project.png');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+
+                <h3 class="heading"><a href="https://mtn-website-recreation.vercel.app/">MTN Website <u>Frontend Recreation</u></a></h3>
+                <p>
+
+I recreated the MTN website from scratch as a frontend development project, focusing on translating a real-world telecom experience into a responsive, modern web interface.
+
+I paid close attention to the original website’s layout, typography, navigation, spacing, responsive behavior, and overall user experience while rebuilding the interface with my own code. The project gave me the opportunity to work on reusable components, responsive design, interactive UI elements, and creating a consistent experience across different screen sizes.
+                </br>
+                </br>
+This project demonstrates my ability to take an existing product as a reference, break down its interface into individual components, and turn that design into a functional, responsive website.
+</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-end">
+              <a href="https://facelyecards.vercel.app/" class="block-20 zoom-effect" style="background-image: url('images/facely.png');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+
+                <h3 class="heading"><a href="https://facelyecards.vercel.app/">Facely<u></u></a></h3>
+                <p>I built Facely as a SaaS-style web app that makes personalized eCards without requiring design skills. I designed and developed the experience from the template gallery to the face-placement editor and final PNG export. I implemented on-device face detection, automatic face positioning, manual scaling/rotation controls, responsive layouts, camera support, and client-side image processing so photos never need to leave the browser.
+
+<br>I also designed the product around a real SaaS experience, including template categories, pricing tiers, Pro features, FAQs, and a complete user flow from discovering a template to creating and downloading a finished card.
+<br>
+<br>
+This project challenged me to think beyond just building a UI. I had to consider image processing, face positioning, responsive interactions, performance, privacy, usability, and how the product could eventually scale into a real service.
+</p>
+              </div>
+            </div>
+          </div>          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-end">
+              <a href="https://www.aajexpress.org/" class="block-20 zoom-effect" style="background-image: url('images/logistics.png');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+
+                <h3 class="heading"><a href="https://www.aajexpress.org/">AAJ Express <u>Logistics Website</u></a></h3>
+                <p>I designed and developed a modern logistics website for AAJ Express, focused on making shipping services easier to understand and access. I built the experience around key customer actions such as shipment tracking, discovering international and local delivery services, accessing shipping information, and connecting with AAJ’s digital logistics tools.
+<br>
+<br>
+I focused heavily on responsive design, clear information hierarchy, intuitive navigation, reusable UI components, and creating a professional experience that feels trustworthy for both individual customers and businesses.
+<br>
+<br>
+The project challenged me to think beyond visual design and build a website around real business goals — helping users quickly understand the service, find what they need, and take action.
+</p>
+              </div>
+            </div>
+          </div>
+                    <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-end">
+              <a href="https://honeylandschools.ng/" class="block-20 zoom-effect" style="background-image: url('images/project1.png');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+
+                <h3 class="heading"><a href="https://honeylandschools.ng/">Honeyland<u> School Website</u></a></h3>
+                <p>I designed and developed the Honeyland School website as a modern digital platform for presenting the school, its academic environment, programs, and key information to prospective parents and students. I focused on creating a clean, responsive experience that makes important information easy to discover while maintaining a professional visual identity across desktop and mobile devices.
+<br>
+<br>
+This project challenged me to turn a real educational brand into a functional web experience, balancing visual design, usability, responsive layouts, navigation, and performance to create a website that feels trustworthy and easy to use.
+</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry">
+              <a href="https://pixelpay-fintech-webapp.versal.app" class="block-20 zoom-effect" style="background-image: url('images/project3.jpg.png');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+
+                <h3 class="heading"><a href="https://pixelpay-fintech-webapp.vercel.app/">PixelPay – <u>Digital Banking Dashboard UI</u></a></h3>
+                <p>PixelPay is a modern digital banking dashboard designed to simulate the interface of a real fintech application. The project features a user account overview, transaction history table, balance display with Nigerian currency formatting, and quick financial actions such as airtime purchase, data subscription, electricity payment, and bill settlement. The interface focuses on clean fintech design patterns, responsive layout, and interactive UI elements to create a smooth user experience similar to real Nigerian banking applications.</p>		
+              </div>
+            </div>
+          </div> -->
+          <!-- <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry">
+              <a href="https://pixelpay-fintech-webapp.versal.app" class="block-20 zoom-effect" style="background-image: url('images/project3.jpg.png');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+
+                <h3 class="heading"><a href="https://pixelpay-fintech-webapp.vercel.app/">PixelPay – <u>Digital Banking Dashboard UI</u></a></h3>
+                <p>PixelPay is a modern digital banking dashboard designed to simulate the interface of a real fintech application. The project features a user account overview, transaction history table, balance display with Nigerian currency formatting, and quick financial actions such as airtime purchase, data subscription, electricity payment, and bill settlement. The interface focuses on clean fintech design patterns, responsive layout, and interactive UI elements to create a smooth user experience similar to real Nigerian banking applications.</p>		
+              </div>
+            </div>
+          </div> -->
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry">
+              <a href="https://pixelpay-fintech-webapp.versal.app" class="block-20 zoom-effect" style="background-image: url('images/project3.jpg.png');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+
+                <h3 class="heading"><a href="https://pixelpay-fintech-webapp.vercel.app/">PixelPay – <u>Digital Banking Dashboard UI</u></a></h3>
+                <p>PixelPay is a modern digital banking dashboard designed to simulate the interface of a real fintech application. The project features a user account overview, transaction history table, balance display with Nigerian currency formatting, and quick financial actions such as airtime purchase, data subscription, electricity payment, and bill settlement. The interface focuses on clean fintech design patterns, responsive layout, and interactive UI elements to create a smooth user experience similar to real Nigerian banking applications.</p>		
+              </div>
+            </div>
+          </div>
+          <!-- <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry">
+              <a href="https://pixelpay-fintech-webapp.versal.app" class="block-20 zoom-effect" style="background-image: url('images/project3.jpg.png');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+
+                <h3 class="heading"><a href="https://pixelpay-fintech-webapp.vercel.app/">PixelPay – <u>Digital Banking Dashboard UI</u></a></h3>
+                <p>PixelPay is a modern digital banking dashboard designed to simulate the interface of a real fintech application. The project features a user account overview, transaction history table, balance display with Nigerian currency formatting, and quick financial actions such as airtime purchase, data subscription, electricity payment, and bill settlement. The interface focuses on clean fintech design patterns, responsive layout, and interactive UI elements to create a smooth user experience similar to real Nigerian banking applications.</p>		
+              </div>
+            </div>
+          </div> -->
+          <div class="col-md-4 d-flex ftco-animate">
+				<div class="blog-entry justify-content-end">
+				<a href="https://www.tatucity.com" class="block-20 zoom-effect" style="background-image: url('images/project4.png');">
+				</a>
+				<div class="text mt-3 float-right d-block">
+  
+				  <h3 class="heading"><a href="https://www.tatucity.com/">Tatu Property – Real Estate Investment & Property Showcase Website</a></h3>
+				  <p>Tatu Property is a modern real estate website developed to present large-scale property developments, investment opportunities, and residential projects through a clean and structured digital platform. The website features sections for property listings, project details, image galleries, and company news to keep investors and potential buyers informed about ongoing developments. The interface emphasizes strong visual presentation, intuitive navigation, and responsive design to ensure a smooth browsing experience across devices. This project demonstrates practical skills in front-end development, layout structuring, and building scalable websites for real estate companies and property developers.</p>
+				</div>
+			  </div>
+			</div>
+        </div>
+        
+	<br>
+		<!-- added justify-content-center to center align the last two projects -->
+		<!-- <div class="row d-flex justify-content-center">  
+			<div class="col-md-4 d-flex ftco-animate">
+				<div class="blog-entry justify-content-end">
+				<a href="https://www.tatucity.com" class="block-20 zoom-effect" style="background-image: url('images/project4.png');">
+				</a>
+				<div class="text mt-3 float-right d-block">
+  
+				  <h3 class="heading"><a href="https://www.tatucity.com/">Tatu Property – Real Estate Investment & Property Showcase Website</a></h3>
+				  <p>Tatu Property is a modern real estate website developed to present large-scale property developments, investment opportunities, and residential projects through a clean and structured digital platform. The website features sections for property listings, project details, image galleries, and company news to keep investors and potential buyers informed about ongoing developments. The interface emphasizes strong visual presentation, intuitive navigation, and responsive design to ensure a smooth browsing experience across devices. This project demonstrates practical skills in front-end development, layout structuring, and building scalable websites for real estate companies and property developers.</p>
+				</div>
+			  </div>
+			</div>
+		 </div> -->
+	  </div>
+	</section>
+
+	<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
+      <div class="container">
+		<div class="row d-md-flex align-items-center">
+          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+            <div class="block-18">
+              <div class="text">
+                <!-- <strong class="number" data-number="4">Why should you hire me</strong> -->
+
+                <span>I am young, energetic, and eager to learn.</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+            <div class="block-18">
+              <div class="text">
+                <!-- <strong class="number" data-number="7">0</strong> -->
+                <span>I am focused on self-development and continuously improving my skills.</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+            <div class="block-18">
+              <div class="text">
+                <!-- <strong class="number"> <a href="https://ieeexplore.ieee.org/document/9915906">1-View Here</a></strong> -->
+                <span>I am here to gain valuable experience and apply my knowledge effectively.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+            <div class="block-18">
+              <div class="text">
+                <!-- <strong class="number" data-number="7">0</strong> -->
+                <span>I am here to gain valuable experience and apply my knowledge effectively.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+	
+	  <div class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/bg_1.jpg)">
+			<!-- <div class="container"> -->
+				<div class="row justify-content-center">
+					<div class="col-md-7 ftco-animate text-center">
+						<h2>More projects on<span> Github  </span> </h2>
+						<p><a href="https://github.com/Pempixel-Web" class="btn btn-primary py-3 px-5">GitHub</a></p>
+						<br> 	
+						<div class="heading"> 
+							<h3>My Philosophy</h3>
+							<h3><b>"The best way to predict the future is to invent it"</b></h3>
+							<h3>Alan Kay</h3>
+						
+						</div>
+					</div>
+				</div>
+			<!-- </div> -->
+		</div>
+	</section>
+
+
+
+    <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
+      <div class="container">
+      	<div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <h1 class="big big-2">Contact</h1>
+            <h2 class="mb-4">Contact Me</h2>
+            <p>Below are the details to reach out to me!</p>
+          </div>
+        </div>
+
+        <div class="row d-flex contact-info mb-5">
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+          	<div class="align-self-stretch box p-4 text-center">
+          		<div class="icon d-flex align-items-center justify-content-center">
+          			<span class="icon-map-signs"></span>
+          		</div>
+          		<h3 class="mb-4">Address</h3>
+	            <p><a href="https://maps.app.goo.gl/mn8bqhM7HrSw7MQQ8">Based in Lagos, Nigeria 🇳🇬 Available for Remote Work Worldwide.<br>
+<b>Building for the world</b></a></p>
+	          </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+          	<div class="align-self-stretch box p-4 text-center">
+          		<div class="icon d-flex align-items-center justify-content-center">
+          			<span class="icon-phone2"></span>
+          		</div>
+          		<h3 class="mb-4">Contact Number</h3>
+	            <p><a href="tel://8129473352">+234 8129473352</a></p>
+	          </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+          	<div class="align-self-stretch box p-4 text-center">
+          		<div class="icon d-flex align-items-center justify-content-center">
+          			<span class="icon-paper-plane"></span>
+          		</div>
+          		<h3 class="mb-4">Email Address</h3>
+	            <p><a href="mailto:tech.pempixel@gmail.com">tech.pempixel@gmail.com</a></p>
+	          </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+          	<div class="align-self-stretch box p-4 text-center">
+          		<div class="icon d-flex align-items-center justify-content-center">
+          			<span class="icon-globe"></span>
+          		</div>
+          		<h3 class="mb-4">Download Resume</h3>
+	            <p><a href="https://drive.google.com/file/d/12iJAtRoYwWte2ghWtjr99ngT9qeihtfL/view?usp=sharing">Click Here</a></p>
+	          </div>
+          </div>
+
+		  <div class="container">
+			<br>
+			<br>
+			<div class="row justify-content-center">
+				<div class="col-md-7 ftco-animate text-center">
+					<h2>Have a<span> Question? </span> <a href="https://docs.google.com/forms/d/e/1FAIpQLSfmC0fQW07rkkdZ1J2BHAV21nulID8FIwdKiMzg4A7mmQXL_A/viewform?usp=sharing&ouid=110249119100744893537" class="btn btn-primary py-3 px-5">Click Here</a> </h2>
+				</div>
+			</div>
+				<br>
+					<ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
+					  <li class="ftco-animate normal-txt">Find me on </li>
+					  <!-- <li class="ftco-animate"><a href="https://www.youtube.com/@RishabhMishraOfficial"><span class="icon-youtube"></span></a></li> -->					  <li class="ftco-animate"><a href="https://www.linkedin.com/in/ezekiel-vincent-635698315"><span class="icon-linkedin"></span></a></li>  
+					  <li class="ftco-animate"><a href="https://x.com/pempixel"><span class="icon-twitter"></span></a></li>	
+					  <li class="ftco-animate"><a href="https://github.com/Pempixel-Web"><span class="icon-github"></span></a></li>  
+					  
+					</ul>
+				<br>
+		   </div>
+   </div>
+ </section>
+
+
+ 
+	
+    <footer class="ftco-footer ftco-section">
+		<div class="container">
+		  <div class="row">
+			<div class="col-md-12 text-center">
+  
+			  <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+	Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <i class="icon-heart color-danger" aria-hidden="true"></i>  <a href="https://colorlib.com" target="_blank"></a>
+	<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+			</div>
+		  </div>
+		</div>
+	  </footer>
+
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#161b2c"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#6d5efc"/></svg></div>
+
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/scrollax.min.js"></script>
+  
+  <script src="js/main.js"></script>
+    
+  </body>
+</html>
