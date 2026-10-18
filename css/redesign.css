@@ -57,7 +57,6 @@
    2. GLOBAL BASE
    ----------------------------------------------------------------------- */
 html {
-  scroll-behavior: smooth;
 }
 
 body {
@@ -148,9 +147,6 @@ p {
   backdrop-filter: blur(14px) saturate(140%);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  transition:
-    background 0.35s var(--ease),
-    box-shadow 0.35s var(--ease);
 }
 @media (max-width: 991.98px) {
   .ftco-navbar-light {
@@ -264,20 +260,9 @@ p {
     transparent 65%
   );
   filter: blur(10px);
-  animation: heroFloat 9s ease-in-out infinite;
   pointer-events: none;
   z-index: 0;
 }
-@keyframes heroFloat {
-  0%,
-  100% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(-3%, 4%);
-  }
-}
-
 .hero .container,
 .hero .slider-text {
   position: relative;
@@ -327,36 +312,6 @@ p {
   }
 }
 
-#typing-animation {
-  font-family: var(--font-mono) !important;
-  font-size: 20px !important;
-  font-weight: 500 !important;
-  color: var(--accent-2) !important;
-  display: inline-block;
-  animation: none !important; /* JS drives the character reveal already */
-  white-space: normal !important;
-  overflow: visible !important;
-}
-#typing-animation::before {
-  display: none !important;
-  content: none !important;
-}
-#typing-animation::after {
-  content: "";
-  display: inline-block;
-  width: 2px;
-  height: 1em;
-  margin-left: 4px;
-  background: var(--accent-2);
-  vertical-align: -2px;
-  animation: caretBlink 1s steps(2) infinite;
-}
-@keyframes caretBlink {
-  50% {
-    opacity: 0;
-  }
-}
-
 .hero .slider-text h2 {
   font-family: var(--font-mono) !important;
   font-size: 15px !important;
@@ -381,7 +336,6 @@ p {
   overflow: hidden;
   border: 1px solid var(--border-strong);
   background-color: var(--bg-2);
-  transition: filter 0.4s ease;
   filter: grayscale(100%);
 }
 
@@ -396,13 +350,8 @@ p {
   border: 1px solid var(--border-strong);
   background-color: var(--bg-2);
   filter: grayscale(100%);
-  transition: filter 0.4s ease;
 }
 
-.hero .one-third.img:hover {
-  filter: grayscale(0%);
-  filter: blur(10px);
-}
 
 /* .hero .one-third.img .overlay{
   opacity:1 !important;
@@ -608,13 +557,8 @@ p {
   border-left: 3px solid var(--accent) !important;
   border-radius: var(--radius) !important;
   padding: 2rem !important;
-  transition:
-    transform 0.3s var(--ease),
-    border-color 0.3s var(--ease),
-    background 0.3s var(--ease);
 }
 .resume-wrap:hover {
-  transform: translateY(-4px);
   border-left-color: var(--accent-2) !important;
   background: var(--surface-strong) !important;
 }
@@ -671,14 +615,9 @@ p {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
-  transition:
-    transform 0.4s var(--ease),
-    box-shadow 0.4s var(--ease),
-    border-color 0.4s var(--ease);
   height: 100%;
 }
 .blog-entry:hover {
-  transform: translateY(-8px);
   border-color: rgba(var(--accent-rgb), 0.5);
   box-shadow: var(--shadow-glow);
 }
@@ -712,14 +651,9 @@ p {
   border-radius: 999px;
   background: var(--gradient);
   opacity: 0;
-  transform: translateY(8px);
-  transition:
-    opacity 0.35s var(--ease),
-    transform 0.35s var(--ease);
 }
 .blog-entry:hover .block-20::before {
   opacity: 1;
-  transform: translateY(0);
 }
 
 .blog-entry .text {
@@ -762,12 +696,8 @@ p {
   border-radius: var(--radius) !important;
   padding: 2rem 1.6rem !important;
   height: 100%;
-  transition:
-    transform 0.3s var(--ease),
-    border-color 0.3s var(--ease);
 }
 .ftco-counter .block-18:hover {
-  transform: translateY(-4px);
   border-color: rgba(var(--accent-rgb), 0.4);
 }
 .ftco-counter .block-18 .text span {
@@ -842,13 +772,8 @@ p {
   border-radius: var(--radius) !important;
   padding: 2rem 1.4rem !important;
   height: 100%;
-  transition:
-    transform 0.3s var(--ease),
-    border-color 0.3s var(--ease),
-    background 0.3s var(--ease);
 }
 .contact-section .box:hover {
-  transform: translateY(-5px);
   border-color: rgba(var(--accent-rgb), 0.45);
   background: var(--surface-strong);
 }
@@ -876,13 +801,8 @@ p {
 .ftco-footer-social li a {
   background: var(--surface) !important;
   border: 1px solid var(--border);
-  transition:
-    transform 0.3s var(--ease),
-    border-color 0.3s var(--ease),
-    background 0.3s var(--ease);
 }
 .ftco-footer-social li a:hover {
-  transform: translateY(-4px);
   border-color: rgba(var(--accent-rgb), 0.5);
   background: var(--gradient-soft) !important;
 }
@@ -914,35 +834,13 @@ p {
   overflow: hidden;
   z-index: 1;
   box-shadow: 0 14px 34px -12px rgba(var(--accent-rgb), 0.55) !important;
-  transition:
-    transform 0.3s var(--ease),
-    box-shadow 0.3s var(--ease);
 }
 .btn.btn-primary:hover {
-  transform: translateY(-3px);
   background: var(--gradient) !important;
   color: #fff !important;
   box-shadow: 0 18px 40px -10px rgba(var(--accent-rgb), 0.7) !important;
 }
-.btn.btn-primary::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -60%;
-  width: 40%;
-  height: 100%;
-  background: linear-gradient(
-    115deg,
-    transparent,
-    rgba(255, 255, 255, 0.35),
-    transparent
-  );
-  transform: skewX(-20deg);
-  transition: left 0.6s var(--ease);
-}
-.btn.btn-primary:hover::after {
-  left: 130%;
-}
+
 
 /* -----------------------------------------------------------------------
    12. FOOTER + LOADER
@@ -963,21 +861,6 @@ p {
 }
 .color-danger {
   color: var(--accent-3) !important;
-}
-
-#ftco-loader.fullscreen {
-  background-color: var(--bg-0) !important;
-}
-
-/* -----------------------------------------------------------------------
-   13. SCROLL-REVEAL POLISH
-   (the template already handles visibility/opacity via .ftco-animate +
-   .ftco-animated in style.css/animate.css — we only trim the reveal
-   duration slightly so it reads as premium rather than default-template)
-   ----------------------------------------------------------------------- */
-.animated-fast {
-  -webkit-animation-duration: 0.7s;
-  animation-duration: 0.7s;
 }
 
 /* -----------------------------------------------------------------------
@@ -1007,3 +890,6 @@ body {
   overflow-x: hidden;
   max-width: 100%;
 }
+
+/* Static hero shell: the carousel is no longer initialised */
+.owl-carousel.home-slider { display: block; }
